@@ -64,25 +64,28 @@ namespace Assignment4
 
         public bool DeleteCategory(int id)
         {
-            bool found = false;
             using (var db = new NorthwindConnect())
             {
-
-                foreach (Category cat in db.Categories)
-                {
-                    if (cat.Id == id)
-                    {
-                        found = true;
-                        break;
-                    }
-                }
-                if (found == true)
-                {
-                    db.Categories.Remove(db.Categories.Find(id));
-                    db.SaveChanges();
-                }
+                var category = db.Categories.Find(id);
+                if (category == null) return false;
+                db.Categories.Remove(db.Categories.Find(id));
+                db.SaveChanges();
+                return true;
             }
-            return found;
+        }
+
+        public bool UpdateCategory(int id, string name, string description)
+        {
+            using (var db = new NorthwindConnect())
+            {
+                var category = db.Categories.Find(id);
+                if (category == null) return false;
+                category.Id = id;
+                category.Name = name;
+                category.Description = description;
+                db.SaveChanges();
+                return true;
+            }
         }
     }
 }

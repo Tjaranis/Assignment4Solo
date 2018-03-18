@@ -82,9 +82,6 @@ namespace Assignment4.Tests
             service.DeleteCategory(category.Id);
         }
 
-        /* Categories */
-        /*
-
         [Fact]
         public void UpdateCategory_InvalidID_ReturnsFalse()
         {
@@ -92,6 +89,9 @@ namespace Assignment4.Tests
             var result = service.UpdateCategory(-1, "UpdatedName", "UpdatedDescription");
             Assert.False(result);
         }
+
+        /* Categories */
+        /*
 
         /* products */
         /*
