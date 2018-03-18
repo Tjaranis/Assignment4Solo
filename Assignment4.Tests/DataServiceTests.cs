@@ -45,9 +45,6 @@ namespace Assignment4.Tests
             service.DeleteCategory(category.Id);
         }
 
-        /* Categories */
-        /*
-
         [Fact]
         public void DeleteCategory_ValidId_RemoveTheCategory()
         {
@@ -84,6 +81,9 @@ namespace Assignment4.Tests
             // cleanup
             service.DeleteCategory(category.Id);
         }
+
+        /* Categories */
+        /*
 
         [Fact]
         public void UpdateCategory_InvalidID_ReturnsFalse()

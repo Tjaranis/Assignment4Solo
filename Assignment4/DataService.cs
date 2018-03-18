@@ -53,9 +53,36 @@ namespace Assignment4
             }
         }
 
-        public void DeleteCategory(object id)
+        /*public void DeleteCategory(object id)
         {
-            //throw new NotImplementedException();
+            using (var db = new NorthwindConnect())
+            {
+                db.Categories.Remove(db.Categories.Find(id));
+                db.SaveChanges();
+            }
+        }*/
+
+        public bool DeleteCategory(int id)
+        {
+            bool found = false;
+            using (var db = new NorthwindConnect())
+            {
+
+                foreach (Category cat in db.Categories)
+                {
+                    if (cat.Id == id)
+                    {
+                        found = true;
+                        break;
+                    }
+                }
+                if (found == true)
+                {
+                    db.Categories.Remove(db.Categories.Find(id));
+                    db.SaveChanges();
+                }
+            }
+            return found;
         }
     }
 }
