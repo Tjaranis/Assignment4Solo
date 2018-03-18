@@ -90,11 +90,6 @@ namespace Assignment4.Tests
             Assert.False(result);
         }
 
-        /* Categories */
-        /*
-
-        /* products */
-        /*
         [Fact]
         public void Product_Object_HasIdNameUnitPriceQuantityPerUnitAndUnitsInStock()
         {
@@ -105,6 +100,13 @@ namespace Assignment4.Tests
             Assert.Null(product.QuantityPerUnit);
             Assert.Equal(0, product.UnitsInStock);
         }
+
+        /* Categories */
+        /*
+
+        /* products */
+        /*
+        
 
         [Fact]
         public void GetProduct_ValidId_ReturnsProductWithCategory()
