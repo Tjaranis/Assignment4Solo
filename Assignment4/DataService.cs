@@ -6,7 +6,8 @@ namespace Assignment4
 {
     public class DataService
     {
-        
+        /*category methods*/
+
         /*
          * @int v id-number of categary
          * @return Category with the id number given.
@@ -15,21 +16,15 @@ namespace Assignment4
         {
             using (var db = new NorthwindConnect())
             {
-                foreach (var category in db.Categories)
-                {
-                    if(categoryId.Equals(category.Id))
-                    {
-                        return category;
-                    }
-                }
+                var category = db.Categories.Find(categoryId);
+                if (category == null) return null;
+                return category;
             }
-            return null;
         }
 
         public List<Category> GetCategories()
         {
             var db = new NorthwindConnect();
-            //List<Category> dbList = List(db.Categories);
             return db.Categories.ToList();
         }
 
@@ -85,6 +80,17 @@ namespace Assignment4
                 category.Description = description;
                 db.SaveChanges();
                 return true;
+            }
+        }
+
+        /*Product methods*/
+        public Product GetProduct(int productId)
+        {
+            using (var db = new NorthwindConnect())
+            {
+                var product = db.Products.Find(productId);
+                if (product == null) return null;
+                return product;
             }
         }
     }
