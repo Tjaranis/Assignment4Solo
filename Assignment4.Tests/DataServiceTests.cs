@@ -120,10 +120,8 @@ namespace Assignment4.Tests
             Assert.Equal("Chef Anton's Cajun Seasoning", products.First().Name);
             Assert.Equal("Guaraná Fantástica", products.Last().Name);
         }
-        
 
-        /* products */
-        /*
+        
 
         [Fact]
         public void GetProductsByCategory_ValidId_ReturnsProductWithCategory()
@@ -135,8 +133,8 @@ namespace Assignment4.Tests
             Assert.Equal("Beverages", products.First().Category.Name);
             Assert.Equal("Lakkalikööri", products.Last().Name);
         }
-        */
-        /* orders *//*
+
+        /* orders *//* 
         [Fact]
         public void Order_Object_HasIdDatesAndOrderDetails()
         {
@@ -147,8 +145,8 @@ namespace Assignment4.Tests
             Assert.Null(order.OrderDetails);
             Assert.Null(order.ShipName);
             Assert.Null(order.ShipCity);
-        }
-
+        }/* 
+        /* 
         [Fact]
         public void GetOrder_ValidId_ReturnsCompleteOrder()
         {

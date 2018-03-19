@@ -106,5 +106,18 @@ namespace Assignment4
                return products.ToList();
             }
         }
+
+        public List<Product> GetProductByCategory(int categoryId)
+        {
+            using (var db = new NorthwindConnect())
+            {
+                IEnumerable<Product> products = db.Products.Where(s => s.CategoryId==categoryId)
+               .Select(s => new Product
+               {
+                   Name = s.Name
+               });
+                return products.ToList();
+            }
+        }
     }
 }
