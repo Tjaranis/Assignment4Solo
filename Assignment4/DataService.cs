@@ -93,5 +93,18 @@ namespace Assignment4
                 return product;
             }
         }
+
+        public List<Product> GetProductByName(string productName)
+        {
+            using (var db = new NorthwindConnect())
+            {
+                IEnumerable<Product> products = db.Products.Where(s => s.Name.Contains(productName))
+               .Select(s => new Product
+               {
+                   Name = s.Name
+               });
+               return products.ToList();
+            }
+        }
     }
 }
