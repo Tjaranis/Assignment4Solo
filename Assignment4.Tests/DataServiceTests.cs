@@ -134,7 +134,7 @@ namespace Assignment4.Tests
             Assert.Equal("Lakkalikööri", products.Last().Name);
         }
 
-        /* orders *//* 
+        /* orders */
         [Fact]
         public void Order_Object_HasIdDatesAndOrderDetails()
         {
@@ -146,7 +146,7 @@ namespace Assignment4.Tests
             Assert.Null(order.ShipName);
             Assert.Null(order.ShipCity);
         }/* 
-        /* 
+         
         [Fact]
         public void GetOrder_ValidId_ReturnsCompleteOrder()
         {
